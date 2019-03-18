@@ -1,0 +1,58 @@
+<table>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>{{ (spaceShip$ | async).name }}</td>
+    </tr>
+    <tr>
+      <td>Model</td>
+      <td>{{ (spaceShip$ | async).model }}</td>
+    </tr>
+    <tr>
+      <td>Manufacturer</td>
+      <td>{{ (spaceShip$ | async).model }}</td>
+    </tr>
+    <tr>
+      <td>Cost in credits</td>
+      <td>{{ (spaceShip$ | async).cost_in_credits }}</td>
+    </tr>
+    <tr>
+      <td>Length</td>
+      <td>{{ (spaceShip$ | async).length }}</td>
+    </tr>
+    <tr>
+      <td>Max atmosphering speed</td>
+      <td>{{ (spaceShip$ | async).max_atmosphering_speed }}</td>
+    </tr>
+    <tr>
+      <td>Crew</td>
+      <td>{{ (spaceShip$ | async).crew }}</td>
+    </tr>
+    <tr>
+      <td>Passengers</td>
+      <td>{{ (spaceShip$ | async).passengers }}</td>
+    </tr>
+    <tr>
+      <td>Cargo capacity</td>
+      <td>{{ (spaceShip$ | async).cargo_capacity }}</td>
+    </tr>
+    <tr>
+      <td>Consumables</td>
+      <td>{{ (spaceShip$ | async).consumables }}</td>
+    </tr>
+    <tr>
+      <td>Hyperdrive rating</td>
+      <td>{{ (spaceShip$ | async).hyperdrive_rating }}</td>
+    </tr>
+    <tr>
+      <td>MGLT</td>
+      <td>{{ (spaceShip$ | async).MGLT }}</td>
+    </tr>
+    <tr>
+      <td>Starship class</td>
+      <td>{{ (spaceShip$ | async).starship_class }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button routerLink="/starships">Back</button>

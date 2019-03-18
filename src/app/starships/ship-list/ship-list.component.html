@@ -1,0 +1,21 @@
+<p>ship-list works! {{ user$ | async }}</p>
+<div>
+  <div>
+    <ul>
+      <li *ngFor='let ship of (shipslist$ | async)'>
+        <div *ngIf='ship.error; else shiplist'>
+          {{ ship.message }}
+        </div>
+        <ng-template #shiplist>
+          <a routerLink="shipdetail" (click)="setShip(ship.name)">
+            {{ ship.name + ' ' + ship.model}}
+          </a>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</div>
+<p>total ships {{ count$ | async }}</p>
+<button (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+<button *ngFor="let page of totalPages" (click)="gotoPage(page)" [ngClass]="{ 'page-selected': currentPage === page }">{{ page }}</button>
+<button (click)="nextPage()" [disabled]="currentPage === numPages">Next</button>
