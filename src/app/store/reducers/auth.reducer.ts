@@ -3,6 +3,8 @@
 // Updated version of Action interface
 import { Action } from '../models/Action'
 import { AuthActionTypes }  from '../actions/auth.actions'
+// import { isPlatformServer } from '@angular/common';
+
 
 
 export interface State {
@@ -17,7 +19,7 @@ export const initialState: State = {
   error: null
 };
 
-export function reducer(state = initialState, action: Action): State {
+export function reducer(state: State = Object.assign(initialState, typeof window !== 'undefined' ? window['__STATE__'] : {}), action: Action): State {
   switch (action.type) {
     case AuthActionTypes.SetAuth:
       return {

@@ -26,7 +26,7 @@ export class ShipListComponent implements OnInit {
   page$: Observable<number>
   // spaceShip$: Observable<object>
 
-  private currentPage: number
+  public currentPage: number
   private totalShips: number
   public totalPages: number[]
   public numPages: number
@@ -39,6 +39,7 @@ export class ShipListComponent implements OnInit {
     this.count$ = this.store.select(fromStore.getCount)
     this.page$ = this.store.select(fromStore.getPage)
     // this.spaceShip$ = this.store.select(fromStore.getCurrentShip)
+    console.log("Starships list");
    }
 
   ngOnInit() {

@@ -13,6 +13,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { reducers, metaReducers } from './store/reducers';
 
 import { AuthEffects } from './store/effects/auth.effects';
+import { getInitialState } from './tokens'
+
+
+// import * as reducers from '../app/store/reducers'
 
 @NgModule({
   declarations: [
@@ -20,10 +24,13 @@ import { AuthEffects } from './store/effects/auth.effects';
     WelcomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, { 
+      initialState: getInitialState, // initialize the store with the store from the server
+      metaReducers,
+    }),
     EffectsModule.forRoot([AuthEffects]),
     // !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
