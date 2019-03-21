@@ -36,8 +36,9 @@ export class AppComponent implements OnInit {
         console.log("subscribe-store:", state);
       })
 
-      this.store.dispatch(new authActions.LoadAuths())
     }
+    
+    this.store.dispatch(new authActions.LoadAuths())
 
   }
 

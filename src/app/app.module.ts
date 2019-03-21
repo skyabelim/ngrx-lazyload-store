@@ -28,7 +28,7 @@ import { getInitialState } from './tokens'
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, { 
-      initialState: getInitialState, // initialize the store with the store from the server
+      // initialState: getInitialState, // initialize the store with the store from the server - NOT WORKING!
       metaReducers,
     }),
     EffectsModule.forRoot([AuthEffects]),
